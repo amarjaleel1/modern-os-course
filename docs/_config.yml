@@ -1,0 +1,28 @@
+title: Modern Operating Systems Course
+description: A practical approach to learning Operating Systems
+baseurl: "/modern-os-course"
+url: "https://amarjaleel1.github.io"
+theme: minima
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  modules:
+    output: true
+    permalink: /:collection/:path/
+
+# Author information
+author:
+  name: amarjaleel1
+  email: amarjaleel.bscssef23khp@iba-suk.edu.pk
+
+# Navigation
+header_pages:
+  - about.md
+  - modules.md
+  - resources.md

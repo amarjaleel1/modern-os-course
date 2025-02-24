@@ -1,0 +1,15 @@
+[user]
+  name = Amar Jaleel
+  email = amarjaleel.bscssef23khp@iba-suk.edu.pk
+  username = amarjaleel1
+[init]
+    defaultBranch = main
+[core]
+    editor = code --wait
+    autocrlf = true
+[color]
+    ui = auto
+[pull]
+    rebase = false
+[push]
+    default = simple
