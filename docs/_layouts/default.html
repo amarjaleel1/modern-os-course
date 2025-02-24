@@ -26,9 +26,12 @@
 
     <footer class="site-footer">
         <div class="wrapper">
-            <p>Last updated: 2025-02-24 18:14:16 UTC</p>
+            <p>Last updated: <span id="last-updated"></span></p>
             <p>Maintained by <a href="https://github.com/amarjaleel1">amarjaleel1</a></p>
         </div>
     </footer>
+    <script>
+        document.getElementById('last-updated').textContent = new Date().toISOString();
+    </script>
 </body>
 </html>
