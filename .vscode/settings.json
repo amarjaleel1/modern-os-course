@@ -1,0 +1,28 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "[markdown]": {
+      "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "explorer.compactFolders": false
+  },
+  "extensions": {
+    "recommendations": [
+      "github.vscode-pull-request-github",
+      "eamodio.gitlens",
+      "ginfuru.ginfuru-vscode-jekyll-syntax",
+      "yzhang.markdown-all-in-one",
+      "ritwickdey.liveserver"
+    ]
+  }
+}
