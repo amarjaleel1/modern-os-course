@@ -10,18 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Setup Ruby
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
         uses: ruby/setup-ruby@v1
-
-      - name: Build and deploy
-        run: |
-          # Your build and deploy commands
-          
+      - name: Build site
+        run: JEKYLL_ENV=production bundle exec jekyll build
       - name: Upload artifact
-        uses: actions/upload-artifact@v3 # Update this to the latest version
+        uses: actions/upload-pages-artifact@v2
         with:
-          name: artifact-name
-          path: ./path/to/artifact
+          path: ./_site
