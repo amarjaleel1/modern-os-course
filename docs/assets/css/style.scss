@@ -51,3 +51,61 @@ body {
   line-height: 1.5rem;
   text-align: center;
 }
+
+/* Styles for interactive diagrams */
+#interactive-diagrams {
+  margin: 2rem 0;
+}
+
+#interactive-diagrams svg {
+  width: 100%;
+  height: auto;
+}
+
+#interactive-diagrams circle {
+  stroke: #333;
+  stroke-width: 2px;
+}
+
+#interactive-diagrams rect {
+  stroke: #333;
+  stroke-width: 2px;
+}
+
+#interactive-diagrams text {
+  font-size: 1rem;
+  fill: #333;
+}
+
+/* Styles for simulators */
+#cpu-simulator, #memory-simulator, #file-system-emulator {
+  margin: 2rem 0;
+}
+
+#cpu-simulator input, #memory-simulator input, #file-system-emulator input {
+  margin-bottom: 1rem;
+}
+
+#cpu-simulator button, #memory-simulator button, #file-system-emulator button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+#cpu-simulator button:hover, #memory-simulator button:hover, #file-system-emulator button:hover {
+  background-color: var(--secondary-color);
+}
+
+#cpu-simulator ul, #memory-simulator ul, #file-system-emulator ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#cpu-simulator li, #memory-simulator li, #file-system-emulator li {
+  background-color: #f1f5f9;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
