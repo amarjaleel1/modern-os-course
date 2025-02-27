@@ -63,34 +63,42 @@
   <li>Shows both PIDs</li>
 </ol>
 
-<h2 id="-interactive-quiz">📝 Interactive Quiz</h2>
+<h2 id="-interactive-quiz">🧠 Interactive Quiz</h2>
 
-<h3 id="question-1-what-is-the-primary-function-of-the-fork-system-call">Question 1: What is the primary function of the fork() system call?</h3>
+<h3 id="question-1-what-is-the-return-value-of-fork-in-the-child-process">Question 1: What is the return value of fork() in the child process?</h3>
 <ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Create a new process</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Terminate a process</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Allocate memory</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Manage file systems</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />A. Negative value</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />B. Zero</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />C. Positive value</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />D. Undefined</li>
 </ul>
 
-<p><strong>Explanation:</strong> The primary function of the fork() system call is to create a new process.</p>
+<p><strong>Explanation:</strong> The correct answer is B. In the child process, fork() returns zero.</p>
 
-<h3 id="question-2-what-is-the-state-of-a-process-immediately-after-a-fork-call-in-the-child-process">Question 2: What is the state of a process immediately after a fork() call in the child process?</h3>
+<h3 id="question-2-what-is-the-state-of-a-process-that-is-waiting-for-an-event-to-occur">Question 2: What is the state of a process that is waiting for an event to occur?</h3>
 <ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Terminated</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Running</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Ready</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Waiting</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />A. Running</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />B. Ready</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />C. Waiting</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />D. Terminated</li>
 </ul>
 
-<p><strong>Explanation:</strong> Immediately after a fork() call, the child process is in the Ready state.</p>
+<p><strong>Explanation:</strong> The correct answer is C. A process that is waiting for an event to occur is in the “Waiting” state.</p>
 
-<h3 id="question-3-how-many-processes-are-created-after-a-single-fork-call">Question 3: How many processes are created after a single fork() call?</h3>
+<h3 id="question-3-how-many-processes-are-created-by-the-following-code-snippet">Question 3: How many processes are created by the following code snippet?</h3>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">fork</span><span class="p">();</span>
+    <span class="n">fork</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
 <ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />0</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />1</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />2</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />3</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />A. 1</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />B. 2</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />C. 3</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />D. 4</li>
 </ul>
 
-<p><strong>Explanation:</strong> A single fork() call creates one new process.</p>
+<p><strong>Explanation:</strong> The correct answer is D. The code creates 4 processes in total: the original process and three new processes created by the fork() calls.</p>
