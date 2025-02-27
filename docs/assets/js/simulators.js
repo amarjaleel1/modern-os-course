@@ -1,124 +1,127 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   // CPU Scheduling Simulator
-  const cpuSimulator = document.getElementById("cpu-simulator");
-  if (cpuSimulator) {
-    const processes = [];
-    const addProcessButton = document.getElementById("add-process");
-    const simulateButton = document.getElementById("simulate");
+  function cpuSchedulingSimulator() {
+    const processTable = document.getElementById("process-table");
+    const addProcessBtn = document.getElementById("add-process");
+    const simulateBtn = document.getElementById("simulate");
+    const resultDiv = document.getElementById("result");
 
-    addProcessButton.addEventListener("click", function() {
+    let processes = [];
+
+    addProcessBtn.addEventListener("click", function () {
       const processId = processes.length + 1;
+      const arrivalTime = parseInt(document.getElementById("arrival-time").value);
       const burstTime = parseInt(document.getElementById("burst-time").value);
-      processes.push({ id: processId, burstTime: burstTime });
-      updateProcessList();
+
+      processes.push({ processId, arrivalTime, burstTime });
+
+      const row = processTable.insertRow();
+      row.insertCell(0).textContent = processId;
+      row.insertCell(1).textContent = arrivalTime;
+      row.insertCell(2).textContent = burstTime;
     });
 
-    simulateButton.addEventListener("click", function() {
-      simulateCPUScheduling();
+    simulateBtn.addEventListener("click", function () {
+      // Sort processes by arrival time
+      processes.sort((a, b) => a.arrivalTime - b.arrivalTime);
+
+      let currentTime = 0;
+      let totalWaitingTime = 0;
+      let totalTurnaroundTime = 0;
+
+      processes.forEach((process) => {
+        const waitingTime = currentTime - process.arrivalTime;
+        const turnaroundTime = waitingTime + process.burstTime;
+
+        totalWaitingTime += waitingTime;
+        totalTurnaroundTime += turnaroundTime;
+
+        currentTime += process.burstTime;
+      });
+
+      const avgWaitingTime = totalWaitingTime / processes.length;
+      const avgTurnaroundTime = totalTurnaroundTime / processes.length;
+
+      resultDiv.innerHTML = `<p>Average Waiting Time: ${avgWaitingTime.toFixed(2)}</p>
+                             <p>Average Turnaround Time: ${avgTurnaroundTime.toFixed(2)}</p>`;
     });
-
-    function updateProcessList() {
-      const processList = document.getElementById("process-list");
-      processList.innerHTML = "";
-      processes.forEach(process => {
-        const listItem = document.createElement("li");
-        listItem.textContent = `Process ${process.id}: Burst Time = ${process.burstTime}`;
-        processList.appendChild(listItem);
-      });
-    }
-
-    function simulateCPUScheduling() {
-      const result = document.getElementById("simulation-result");
-      result.innerHTML = "";
-      processes.forEach(process => {
-        const resultItem = document.createElement("div");
-        resultItem.textContent = `Process ${process.id} executed for ${process.burstTime} units`;
-        result.appendChild(resultItem);
-      });
-    }
   }
+
+  cpuSchedulingSimulator();
 
   // Memory Management Simulator
-  const memorySimulator = document.getElementById("memory-simulator");
-  if (memorySimulator) {
-    const memoryBlocks = [];
-    const addBlockButton = document.getElementById("add-block");
-    const allocateButton = document.getElementById("allocate");
+  function memoryManagementSimulator() {
+    const memoryTable = document.getElementById("memory-table");
+    const addProcessBtn = document.getElementById("add-memory-process");
+    const simulateBtn = document.getElementById("simulate-memory");
+    const resultDiv = document.getElementById("memory-result");
 
-    addBlockButton.addEventListener("click", function() {
-      const blockSize = parseInt(document.getElementById("block-size").value);
-      memoryBlocks.push({ size: blockSize, allocated: false });
-      updateMemoryList();
+    let memoryProcesses = [];
+
+    addProcessBtn.addEventListener("click", function () {
+      const processId = memoryProcesses.length + 1;
+      const memorySize = parseInt(document.getElementById("memory-size").value);
+
+      memoryProcesses.push({ processId, memorySize });
+
+      const row = memoryTable.insertRow();
+      row.insertCell(0).textContent = processId;
+      row.insertCell(1).textContent = memorySize;
     });
 
-    allocateButton.addEventListener("click", function() {
-      allocateMemory();
-    });
+    simulateBtn.addEventListener("click", function () {
+      let memory = [];
+      let totalMemoryUsed = 0;
 
-    function updateMemoryList() {
-      const memoryList = document.getElementById("memory-list");
-      memoryList.innerHTML = "";
-      memoryBlocks.forEach((block, index) => {
-        const listItem = document.createElement("li");
-        listItem.textContent = `Block ${index + 1}: Size = ${block.size}, Allocated = ${block.allocated}`;
-        memoryList.appendChild(listItem);
+      memoryProcesses.forEach((process) => {
+        memory.push(process.memorySize);
+        totalMemoryUsed += process.memorySize;
       });
-    }
 
-    function allocateMemory() {
-      const processSize = parseInt(document.getElementById("process-size").value);
-      const result = document.getElementById("allocation-result");
-      result.innerHTML = "";
-      for (let block of memoryBlocks) {
-        if (!block.allocated && block.size >= processSize) {
-          block.allocated = true;
-          const resultItem = document.createElement("div");
-          resultItem.textContent = `Process of size ${processSize} allocated to block of size ${block.size}`;
-          result.appendChild(resultItem);
-          updateMemoryList();
-          return;
-        }
-      }
-      result.textContent = "No suitable block found for allocation";
-    }
+      const avgMemoryUsage = totalMemoryUsed / memoryProcesses.length;
+
+      resultDiv.innerHTML = `<p>Total Memory Used: ${totalMemoryUsed}</p>
+                             <p>Average Memory Usage: ${avgMemoryUsage.toFixed(2)}</p>`;
+    });
   }
+
+  memoryManagementSimulator();
 
   // File System Emulator
-  const fileSystemEmulator = document.getElementById("file-system-emulator");
-  if (fileSystemEmulator) {
-    const files = [];
-    const addFileButton = document.getElementById("add-file");
-    const viewFilesButton = document.getElementById("view-files");
+  function fileSystemEmulator() {
+    const fileTable = document.getElementById("file-table");
+    const addFileBtn = document.getElementById("add-file");
+    const simulateBtn = document.getElementById("simulate-file");
+    const resultDiv = document.getElementById("file-result");
 
-    addFileButton.addEventListener("click", function() {
+    let files = [];
+
+    addFileBtn.addEventListener("click", function () {
+      const fileId = files.length + 1;
       const fileName = document.getElementById("file-name").value;
       const fileSize = parseInt(document.getElementById("file-size").value);
-      files.push({ name: fileName, size: fileSize });
-      updateFileList();
+
+      files.push({ fileId, fileName, fileSize });
+
+      const row = fileTable.insertRow();
+      row.insertCell(0).textContent = fileId;
+      row.insertCell(1).textContent = fileName;
+      row.insertCell(2).textContent = fileSize;
     });
 
-    viewFilesButton.addEventListener("click", function() {
-      viewFiles();
+    simulateBtn.addEventListener("click", function () {
+      let totalFileSize = 0;
+
+      files.forEach((file) => {
+        totalFileSize += file.fileSize;
+      });
+
+      const avgFileSize = totalFileSize / files.length;
+
+      resultDiv.innerHTML = `<p>Total File Size: ${totalFileSize}</p>
+                             <p>Average File Size: ${avgFileSize.toFixed(2)}</p>`;
     });
-
-    function updateFileList() {
-      const fileList = document.getElementById("file-list");
-      fileList.innerHTML = "";
-      files.forEach(file => {
-        const listItem = document.createElement("li");
-        listItem.textContent = `File: ${file.name}, Size: ${file.size}`;
-        fileList.appendChild(listItem);
-      });
-    }
-
-    function viewFiles() {
-      const result = document.getElementById("file-system-result");
-      result.innerHTML = "";
-      files.forEach(file => {
-        const resultItem = document.createElement("div");
-        resultItem.textContent = `File: ${file.name}, Size: ${file.size}`;
-        result.appendChild(resultItem);
-      });
-    }
   }
+
+  fileSystemEmulator();
 });

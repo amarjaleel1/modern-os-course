@@ -35,11 +35,11 @@ Track your progress through the modules:
 - [ ] Completed System Overview
 - [ ] Completed OS Structure
 
-## 📝 Quiz Completion Tracking
+## 🧠 Interactive Quizzes
 
 Track your quiz completion for each module:
-- [ ] Completed Quiz for Introduction to Operating Systems
-- [ ] Completed Quiz for Process Management
+- [ ] Completed Quiz for Module 1: Introduction to Operating Systems
+- [ ] Completed Quiz for Module 2: Process Management
 
 ## 📅 Schedule
 

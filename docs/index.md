@@ -8,7 +8,7 @@ title: Modern Operating Systems Course
 
 ## 🎯 Course Overview
 
-Welcome to our comprehensive Operating Systems course! This course combines theoretical knowledge with hands-on practice to help you master operating system concepts. Now, it also includes interactive quizzes to enhance your learning experience.
+Welcome to our comprehensive Operating Systems course! This course combines theoretical knowledge with hands-on practice to help you master operating system concepts.
 
 ### What You'll Learn
 
@@ -27,6 +27,11 @@ Welcome to our comprehensive Operating Systems course! This course combines theo
   - Directory structures
   - File system implementation
 
+- **Interactive Quizzes**
+  - Reinforce learning with instant feedback
+  - Track your progress through quizzes
+  - Test your knowledge on OS concepts
+
 ## 🚀 Getting Started
 
 1. [Course Introduction](/modules/introduction)
@@ -41,8 +46,6 @@ Welcome to our comprehensive Operating Systems course! This course combines theo
   </div>
 </div>
 
-Track your quiz progress [here](/modules/quiz-progress)
-
 ## 🔧 Latest Labs
 
 - Process Management Lab
@@ -54,3 +57,4 @@ Track your quiz progress [here](/modules/quiz-progress)
 - [Course Materials](/resources)
 - [Practice Exercises](/exercises)
 - [Discussion Forum](https://github.com/amarjaleel1/modern-os-course/discussions)
+- [Quiz Progress Tracker](/quiz-progress)

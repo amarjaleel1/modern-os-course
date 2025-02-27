@@ -60,28 +60,37 @@ Create a program that:
 3. Makes the parent wait for the child
 4. Shows both PIDs
 
-## 📝 Interactive Quiz
+## 🧠 Interactive Quiz
 
-### Question 1: What is the primary function of the fork() system call?
-- [x] Create a new process
-- [ ] Terminate a process
-- [ ] Allocate memory
-- [ ] Manage file systems
+### Question 1: What is the return value of fork() in the child process?
+- [ ] A. Negative value
+- [ ] B. Zero
+- [ ] C. Positive value
+- [ ] D. Undefined
 
-**Explanation:** The primary function of the fork() system call is to create a new process.
+**Explanation:** The correct answer is B. In the child process, fork() returns zero.
 
-### Question 2: What is the state of a process immediately after a fork() call in the child process?
-- [ ] Terminated
-- [ ] Running
-- [x] Ready
-- [ ] Waiting
+### Question 2: What is the state of a process that is waiting for an event to occur?
+- [ ] A. Running
+- [ ] B. Ready
+- [ ] C. Waiting
+- [ ] D. Terminated
 
-**Explanation:** Immediately after a fork() call, the child process is in the Ready state.
+**Explanation:** The correct answer is C. A process that is waiting for an event to occur is in the "Waiting" state.
 
-### Question 3: How many processes are created after a single fork() call?
-- [ ] 0
-- [x] 1
-- [ ] 2
-- [ ] 3
+### Question 3: How many processes are created by the following code snippet?
+```c
+#include <unistd.h>
 
-**Explanation:** A single fork() call creates one new process.
+int main() {
+    fork();
+    fork();
+    return 0;
+}
+```
+- [ ] A. 1
+- [ ] B. 2
+- [ ] C. 3
+- [ ] D. 4
+
+**Explanation:** The correct answer is D. The code creates 4 processes in total: the original process and three new processes created by the fork() calls.
