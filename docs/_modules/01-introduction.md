@@ -73,3 +73,29 @@ free -h
 ## 🚀 Next Steps
 
 Ready to dive deeper? Move on to [Process Management →](/modules/02-processes)
+
+## 🧠 Interactive Quiz
+
+### Question 1: What is the main function of an Operating System?
+- [ ] A. To run applications
+- [ ] B. To manage hardware resources
+- [ ] C. To provide a user interface
+- [ ] D. All of the above
+
+**Explanation:** The correct answer is D. An operating system manages hardware resources, runs applications, and provides a user interface.
+
+### Question 2: Which component of the OS is responsible for process management?
+- [ ] A. Memory Management
+- [ ] B. File Systems
+- [ ] C. Process Management
+- [ ] D. User Interface
+
+**Explanation:** The correct answer is C. Process Management is responsible for the creation, deletion, scheduling, and synchronization of processes.
+
+### Question 3: Why is memory management important in an OS?
+- [ ] A. It helps in allocating memory to processes
+- [ ] B. It ensures efficient use of memory
+- [ ] C. It manages physical and virtual memory
+- [ ] D. All of the above
+
+**Explanation:** The correct answer is D. Memory management is important because it allocates memory to processes, ensures efficient use of memory, and manages both physical and virtual memory.

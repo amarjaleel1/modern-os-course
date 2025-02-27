@@ -59,41 +59,38 @@ Create a program that:
 2. Makes the child count from 1 to 5
 3. Makes the parent wait for the child
 4. Shows both PIDs
-````
 
-### /d:/modern-os-course/modern-os-course/docs/assets/js/navigation.js
+## 🧠 Interactive Quiz
 
-Add navigation enhancements to track module progress.
+### Question 1: What is the return value of fork() in the child process?
+- [ ] A. Negative value
+- [ ] B. Zero
+- [ ] C. Positive value
+- [ ] D. Undefined
 
-<file>
-```javascript
-// filepath: /d:/modern-os-course/modern-os-course/docs/assets/js/navigation.js
-document.addEventListener('DOMContentLoaded', function() {
-    // Track current module progress
-    const progressKey = 'os_course_progress';
-    let progress = JSON.parse(localStorage.getItem(progressKey) || '{}');
+**Explanation:** The correct answer is B. In the child process, fork() returns zero.
 
-    // Mark module as complete
-    function completeModule(moduleId) {
-        progress[moduleId] = true;
-        localStorage.setItem(progressKey, JSON.stringify(progress));
-        updateProgress();
-    }
+### Question 2: What is the state of a process that is waiting for an event to occur?
+- [ ] A. Running
+- [ ] B. Ready
+- [ ] C. Waiting
+- [ ] D. Terminated
 
-    // Update progress bar
-    function updateProgress() {
-        const total = document.querySelectorAll('.module-item').length;
-        const completed = Object.keys(progress).length;
-        const percentage = (completed / total) * 100;
-        
-        const progressBar = document.querySelector('.progress-bar');
-        if (progressBar) {
-            progressBar.style.width = `${percentage}%`;
-            progressBar.querySelector('.progress-text').textContent = 
-                `${completed}/${total} Completed`;
-        }
-    }
+**Explanation:** The correct answer is C. A process that is waiting for an event to occur is in the "Waiting" state.
 
-    // Initialize
-    updateProgress();
-});
+### Question 3: How many processes are created by the following code snippet?
+```c
+#include <unistd.h>
+
+int main() {
+    fork();
+    fork();
+    return 0;
+}
+```
+- [ ] A. 1
+- [ ] B. 2
+- [ ] C. 3
+- [ ] D. 4
+
+**Explanation:** The correct answer is D. The code creates 4 processes in total: the original process and three new processes created by the fork() calls.

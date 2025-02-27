@@ -27,6 +27,11 @@ Welcome to our comprehensive Operating Systems course! This course combines theo
   - Directory structures
   - File system implementation
 
+- **Interactive Quizzes**
+  - Reinforce learning with instant feedback
+  - Track your progress through quizzes
+  - Test your knowledge on OS concepts
+
 ## 🚀 Getting Started
 
 1. [Course Introduction](/modules/introduction)
@@ -52,3 +57,4 @@ Welcome to our comprehensive Operating Systems course! This course combines theo
 - [Course Materials](/resources)
 - [Practice Exercises](/exercises)
 - [Discussion Forum](https://github.com/amarjaleel1/modern-os-course/discussions)
+- [Quiz Progress Tracker](/quiz-progress)

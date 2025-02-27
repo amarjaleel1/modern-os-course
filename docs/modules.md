@@ -35,6 +35,12 @@ Track your progress through the modules:
 - [ ] Completed System Overview
 - [ ] Completed OS Structure
 
+## 🧠 Interactive Quizzes
+
+Track your quiz completion for each module:
+- [ ] Completed Quiz for Module 1: Introduction to Operating Systems
+- [ ] Completed Quiz for Module 2: Process Management
+
 ## 📅 Schedule
 
 - **Week 1:** Foundations of Operating Systems
