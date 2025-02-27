@@ -8,7 +8,7 @@ title: Modern Operating Systems Course
 
 ## 🎯 Course Overview
 
-Welcome to our comprehensive Operating Systems course! This course combines theoretical knowledge with hands-on practice to help you master operating system concepts.
+Welcome to our comprehensive Operating Systems course! This course combines theoretical knowledge with hands-on practice to help you master operating system concepts. Now, it also includes interactive quizzes to enhance your learning experience.
 
 ### What You'll Learn
 
@@ -40,6 +40,8 @@ Welcome to our comprehensive Operating Systems course! This course combines theo
     <span class="progress-text">Start Your Journey!</span>
   </div>
 </div>
+
+Track your quiz progress [here](/modules/quiz-progress)
 
 ## 🔧 Latest Labs
 

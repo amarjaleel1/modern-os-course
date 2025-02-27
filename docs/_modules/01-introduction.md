@@ -73,3 +73,29 @@ free -h
 ## 🚀 Next Steps
 
 Ready to dive deeper? Move on to [Process Management →](/modules/02-processes)
+
+## 📝 Interactive Quiz
+
+### Question 1: What is the primary function of an operating system?
+- [ ] Manage hardware resources
+- [ ] Manage software applications
+- [ ] Provide a user interface
+- [x] All of the above
+
+**Explanation:** The primary function of an operating system is to manage hardware resources, manage software applications, and provide a user interface.
+
+### Question 2: Which component of the OS is responsible for process creation and deletion?
+- [x] Process Management
+- [ ] Memory Management
+- [ ] File Systems
+- [ ] User Interface
+
+**Explanation:** Process Management is responsible for process creation and deletion.
+
+### Question 3: Why is memory management important in an operating system?
+- [ ] It helps in organizing files
+- [x] It ensures efficient use of memory resources
+- [ ] It manages user interfaces
+- [ ] It handles process synchronization
+
+**Explanation:** Memory management is important because it ensures efficient use of memory resources.

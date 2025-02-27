@@ -59,41 +59,29 @@ Create a program that:
 2. Makes the child count from 1 to 5
 3. Makes the parent wait for the child
 4. Shows both PIDs
-````
 
-### /d:/modern-os-course/modern-os-course/docs/assets/js/navigation.js
+## 📝 Interactive Quiz
 
-Add navigation enhancements to track module progress.
+### Question 1: What is the primary function of the fork() system call?
+- [x] Create a new process
+- [ ] Terminate a process
+- [ ] Allocate memory
+- [ ] Manage file systems
 
-<file>
-```javascript
-// filepath: /d:/modern-os-course/modern-os-course/docs/assets/js/navigation.js
-document.addEventListener('DOMContentLoaded', function() {
-    // Track current module progress
-    const progressKey = 'os_course_progress';
-    let progress = JSON.parse(localStorage.getItem(progressKey) || '{}');
+**Explanation:** The primary function of the fork() system call is to create a new process.
 
-    // Mark module as complete
-    function completeModule(moduleId) {
-        progress[moduleId] = true;
-        localStorage.setItem(progressKey, JSON.stringify(progress));
-        updateProgress();
-    }
+### Question 2: What is the state of a process immediately after a fork() call in the child process?
+- [ ] Terminated
+- [ ] Running
+- [x] Ready
+- [ ] Waiting
 
-    // Update progress bar
-    function updateProgress() {
-        const total = document.querySelectorAll('.module-item').length;
-        const completed = Object.keys(progress).length;
-        const percentage = (completed / total) * 100;
-        
-        const progressBar = document.querySelector('.progress-bar');
-        if (progressBar) {
-            progressBar.style.width = `${percentage}%`;
-            progressBar.querySelector('.progress-text').textContent = 
-                `${completed}/${total} Completed`;
-        }
-    }
+**Explanation:** Immediately after a fork() call, the child process is in the Ready state.
 
-    // Initialize
-    updateProgress();
-});
+### Question 3: How many processes are created after a single fork() call?
+- [ ] 0
+- [x] 1
+- [ ] 2
+- [ ] 3
+
+**Explanation:** A single fork() call creates one new process.

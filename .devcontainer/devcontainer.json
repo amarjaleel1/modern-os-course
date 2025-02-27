@@ -1,0 +1,6 @@
+{
+  "tasks": {
+    "build": "cd docs && bundle install && bundle exec jekyll build",
+    "test": "cd docs && bundle install && bundle exec jekyll build"
+  }
+}

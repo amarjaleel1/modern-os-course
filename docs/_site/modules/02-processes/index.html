@@ -1,0 +1,96 @@
+<h1 id="process-management-in-operating-systems">Process Management in Operating Systems</h1>
+<p><strong>Current Time:</strong> 2025-02-24 18:20:44<br />
+<strong>Author:</strong> amarjaleel1</p>
+
+<h2 id="-interactive-lab-process-creation">🎯 Interactive Lab: Process Creation</h2>
+
+<h3 id="theory">Theory</h3>
+<p>A process is an instance of a program in execution. Every process in Unix-like systems has:</p>
+<ul>
+  <li>Process ID (PID)</li>
+  <li>Parent Process ID (PPID)</li>
+  <li>Process State</li>
+  <li>Memory Space</li>
+</ul>
+
+<h3 id="hands-on-exercise">Hands-on Exercise</h3>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">pid_t</span> <span class="n">pid</span> <span class="o">=</span> <span class="n">fork</span><span class="p">();</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">pid</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"Fork failed</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">pid</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"Child process: PID = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">getpid</span><span class="p">());</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"Parent process: PID = %d, Child PID = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">getpid</span><span class="p">(),</span> <span class="n">pid</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="try-it-yourself">Try it yourself:</h3>
+<ol>
+  <li>Save the code above</li>
+  <li>Compile: <code class="language-plaintext highlighter-rouge">gcc simple_fork.c -o simple_fork</code></li>
+  <li>Run: <code class="language-plaintext highlighter-rouge">./simple_fork</code></li>
+  <li>Observe parent and child processes</li>
+</ol>
+
+<h2 id="-practice-questions">🔍 Practice Questions</h2>
+
+<ol>
+  <li>What happens when fork() returns:
+    <ul class="task-list">
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Negative value</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Zero</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Positive value</li>
+    </ul>
+  </li>
+  <li>How many processes are created after two fork() calls?</li>
+</ol>
+
+<h2 id="-assignment">📝 Assignment</h2>
+<p>Create a program that:</p>
+<ol>
+  <li>Creates a child process</li>
+  <li>Makes the child count from 1 to 5</li>
+  <li>Makes the parent wait for the child</li>
+  <li>Shows both PIDs</li>
+</ol>
+
+<h2 id="-interactive-quiz">📝 Interactive Quiz</h2>
+
+<h3 id="question-1-what-is-the-primary-function-of-the-fork-system-call">Question 1: What is the primary function of the fork() system call?</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Create a new process</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Terminate a process</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Allocate memory</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Manage file systems</li>
+</ul>
+
+<p><strong>Explanation:</strong> The primary function of the fork() system call is to create a new process.</p>
+
+<h3 id="question-2-what-is-the-state-of-a-process-immediately-after-a-fork-call-in-the-child-process">Question 2: What is the state of a process immediately after a fork() call in the child process?</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Terminated</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Running</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Ready</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Waiting</li>
+</ul>
+
+<p><strong>Explanation:</strong> Immediately after a fork() call, the child process is in the Ready state.</p>
+
+<h3 id="question-3-how-many-processes-are-created-after-a-single-fork-call">Question 3: How many processes are created after a single fork() call?</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />0</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />1</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />2</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />3</li>
+</ul>
+
+<p><strong>Explanation:</strong> A single fork() call creates one new process.</p>
